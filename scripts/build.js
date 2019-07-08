@@ -2,9 +2,9 @@
 'use strict';
 var Path = require('path');
 
-var TARGET_DIR = 'web_deploy'
+var TARGET_DIR = 'web_deploy';
 if (process.argv[2]) {
-    TARGET_DIR = process.argv[2]
+  TARGET_DIR = process.argv[2];
 }
 
 require('shelljs/global');
@@ -18,6 +18,11 @@ exec('npm run swagger bundle --        -o ' + TARGET_DIR + '/swagger.json');
 exec('npm run swagger bundle -- --yaml -o ' + TARGET_DIR + '/swagger.yaml');
 
 var SWAGGER_UI_DIST = Path.dirname(require.resolve('swagger-ui'));
-rm('-rf', TARGET_DIR + '/swagger-ui/')
-cp('-R', SWAGGER_UI_DIST, TARGET_DIR + '/swagger-ui/')
-sed('-i', 'https://developer.rbk.money/api/swagger.json', '../swagger.json', TARGET_DIR + '/swagger-ui/index.html')
+rm('-rf', TARGET_DIR + '/swagger-ui/');
+cp('-R', SWAGGER_UI_DIST, TARGET_DIR + '/swagger-ui/');
+sed(
+  '-i',
+  'https://developer.rbk.money/api/swagger.json',
+  '../swagger.json',
+  TARGET_DIR + '/swagger-ui/index.html'
+);

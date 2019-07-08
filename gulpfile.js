@@ -11,40 +11,40 @@ var swaggerRepo = require('swagger-repo');
 var DIST_DIR = 'web_deploy';
 
 gulp.task('serve', ['build', 'watch', 'edit'], function() {
-  portfinder.getPort({port: 3000}, function (err, port) {
+  portfinder.getPort({ port: 3000 }, function(err, port) {
     gulpConnect.server({
       root: [DIST_DIR],
       livereload: true,
       port: port,
-      middleware: function (gulpConnect, opt) {
-        return [
-          cors()
-        ]
+      middleware: function(gulpConnect, opt) {
+        return [cors()];
       }
     });
   });
 });
 
 gulp.task('edit', function() {
-  portfinder.getPort({port: 5000}, function (err, port) {
+  portfinder.getPort({ port: 5000 }, function(err, port) {
     var app = connect();
     app.use(swaggerRepo.swaggerEditorMiddleware());
     app.listen(port);
-    util.log(util.colors.green('swagger-editor started http://localhost:' + port));
+    util.log(
+      util.colors.green('swagger-editor started http://localhost:' + port)
+    );
   });
 });
 
-gulp.task('build', function (cb) {
-  exec('npm run build', function (err, stdout, stderr) {
+gulp.task('build', function(cb) {
+  exec('npm run build', function(err, stdout, stderr) {
     console.log(stderr);
     cb(err);
   });
 });
 
-gulp.task('reload', ['build'], function () {
-  gulp.src(DIST_DIR).pipe(gulpConnect.reload())
+gulp.task('reload', ['build'], function() {
+  gulp.src(DIST_DIR).pipe(gulpConnect.reload());
 });
 
-gulp.task('watch', function () {
+gulp.task('watch', function() {
   gulp.watch(['api/swag-dark-api/**/*', 'web/**/*'], ['reload']);
 });

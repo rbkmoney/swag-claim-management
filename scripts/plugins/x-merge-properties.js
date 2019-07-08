@@ -14,10 +14,11 @@ module.exports = {
     let required = [];
     let properties = {};
     value.forEach(function(obj) {
-      if (obj.$ref && (typeof obj.$ref === 'string')) {
+      if (obj.$ref && typeof obj.$ref === 'string') {
         obj = jpointer.get(swagger, obj.$ref.substring(1));
       }
-      if (typeof obj !== 'object') throw Error('Can\'t merge non-object values at ' + jsonpath);
+      if (typeof obj !== 'object')
+        throw Error("Can't merge non-object values at " + jsonpath);
       required = required.concat(obj.required || []);
       properties = mergePatch.apply(properties, obj.properties || {});
     });
@@ -27,5 +28,5 @@ module.exports = {
   },
   finish: function(swagger) {
     // TODO: cleanup unused $refs
-  },
-}
+  }
+};

@@ -13,8 +13,9 @@ module.exports = {
     }
     let res = null;
     value.forEach(function(obj) {
-      if (typeof obj !== 'object') throw Error('Can\'t merge non-object values at ' + jsonpath);
-      if (obj.$ref && (typeof obj.$ref === 'string')) {
+      if (typeof obj !== 'object')
+        throw Error("Can't merge non-object values at " + jsonpath);
+      if (obj.$ref && typeof obj.$ref === 'string') {
         obj = jpointer.get(swagger, obj.$ref.substring(1));
       }
       res = mergePatch.apply(res, obj);
@@ -24,5 +25,5 @@ module.exports = {
   },
   finish: function(swagger) {
     // TODO: cleanup unused $refs
-  },
-}
+  }
+};
