@@ -22,10 +22,10 @@ get:
           - denied
           - revoked
     - x-rebillyMerge:
-      - name: continuationToken
-        in: query
-        required: false
-      - $ref: '#/definitions/ContinuationToken'    
+        - name: continuationToken
+          in: query
+          required: false
+        - $ref: '#/definitions/ContinuationToken'
   responses:
     '200':
       description: Найденные заявки
@@ -38,7 +38,7 @@ get:
           result:
             type: array
             items:
-              $ref: '#/definitions/Claim'        
+              $ref: '#/definitions/Claim'
     '401':
       $ref: '#/responses/Unauthorized'
     '400':

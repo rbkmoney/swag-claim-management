@@ -8,7 +8,7 @@
     "build": "node ./scripts/build.js",
     "swagger": "swagger-repo",
     "test": "swagger-repo validate",
-    "prettier": "prettier \"**/*.{js,ts,md,json,prettierrc,html}\"",
+    "prettier": "prettier \"**/*.{js,ts,md,json,prettierrc,html,yaml}\"",
     "check": "npm run prettier -- --list-different",
     "fix": "npm run prettier -- --write"
   },
