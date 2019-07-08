@@ -153,6 +153,15 @@ parameters:
     type: string
     maxLength: 40
     minLength: 1
+  continuationToken:
+    name: continuationToken
+    in: query
+    required: false
+    description: |
+      Токен, сигнализирующий о том, что в ответе передана только часть данных.
+      Для получения следующей части нужно повторно обратиться к сервису, указав тот-же набор условий и полученый токен.
+      Если токена нет, получена последняя часть данных.
+    type: string
 
 tags:
   - name: Claims
