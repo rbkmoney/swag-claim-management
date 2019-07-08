@@ -4,10 +4,13 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
+    "start": "gulp serve",
     "build": "node ./scripts/build.js",
     "swagger": "swagger-repo",
     "test": "swagger-repo validate",
-    "start": "gulp serve"
+    "prettier": "prettier \"**/*.{js,ts,md,json,prettierrc,html}\"",
+    "check": "npm run prettier -- --list-different",
+    "fix": "npm run prettier -- --write"
   },
   "devDependencies": {
     "connect": "^3.4.1",
