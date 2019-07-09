@@ -29,8 +29,7 @@ get:
         type: object
         properties:
           continuationToken:
-            x-rebillyMerge:
-              - $ref: '#/definitions/ContinuationToken'
+            $ref: '#/definitions/ContinuationToken'
           result:
             type: array
             items:

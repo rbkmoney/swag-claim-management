@@ -30,10 +30,8 @@ securityDefinitions:
       ```shell
        Authorization: Bearer {TOKENIZATION|PRIVATE_JWT}
       ```
-
 security:
   - bearer: []
-
 responses:
   NotFound:
     description: Заданный ресурс не найден
@@ -45,7 +43,6 @@ responses:
     description: Неверные данные
     schema:
       $ref: '#/definitions/DefaultLogicError'
-
 parameters:
   requestID:
     name: X-Request-ID
@@ -98,7 +95,6 @@ parameters:
 
       Если токена нет, получена последняя часть данных.
     type: string
-
 tags:
   - name: Claims
     x-displayName: Заявки
