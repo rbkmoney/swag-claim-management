@@ -23,12 +23,12 @@ release-v:
       url: ${SLACK_WEBHOOK_URL}
       username: "wercker"
 
-deploy:
-  steps:
-    - lukevivier/gh-pages:
-      repo: rbkmoney/dark-api-ghpages
-      token: ${GITHUB_API_TOKEN}
-  after-steps:
-    - slack-notifier:
-      url: ${SLACK_WEBHOOK_URL}
-      username: "wercker"
+# deploy:
+#   steps:
+#     - lukevivier/gh-pages:
+#       repo: rbkmoney/claim-management-ghpages
+#       token: ${GITHUB_API_TOKEN}
+#   after-steps:
+#     - slack-notifier:
+#       url: ${SLACK_WEBHOOK_URL}
+#       username: "wercker"
