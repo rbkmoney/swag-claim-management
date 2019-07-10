@@ -1,18 +1,15 @@
 type: object
-allOf:
-  - $ref: '#/definitions/ContractModificationUnit'
-  - type: object
-    discriminator: contractModificationType
-    required:
-      - contractModificationType
-    properties:
-      contractModificationType:
-        type: string
-        enum:
-          - ContractParams
-          - ContractTermination
-          - ContractAdjustmentModificationUnit
-          - PayoutToolModificationUnit
-          - LegalAgreement
-          - ReportPreferences
-          - ContractorID
+discriminator: contractModificationType
+required:
+  - contractModificationType
+properties:
+  contractModificationType:
+    type: string
+    enum:
+      - ContractParams
+      - ContractTermination
+      - ContractAdjustmentModificationUnit
+      - PayoutToolModificationUnit
+      - LegalAgreement
+      - ReportPreferences
+      - ContractorID
