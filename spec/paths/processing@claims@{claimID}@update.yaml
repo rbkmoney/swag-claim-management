@@ -9,12 +9,13 @@ put:
     - $ref: '#/parameters/claimID'
     - $ref: '#/parameters/claimRevision'
     - name: changeset
-      in: query
-      description: Список изменений для заявки
+      in: body
       required: true
-      type: array
-      items:
-        $ref: '#/definitions/Modification'
+      schema:
+        type: array
+        items:
+          $ref: '#/definitions/Modification'
+
   responses:
     '201':
       description: Заявка обновлена
