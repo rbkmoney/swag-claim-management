@@ -9,7 +9,7 @@ put:
     - $ref: '#/parameters/claimID'
     - $ref: '#/parameters/claimRevision'
     - name: changeset
-      in: body
+      in: query
       description: Список изменений для заявки
       required: true
       type: array
