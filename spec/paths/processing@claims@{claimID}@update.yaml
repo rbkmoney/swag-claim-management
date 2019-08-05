@@ -10,7 +10,10 @@ put:
     - $ref: '#/parameters/claimRevision'
     - name: changeset
       in: body
-      schema:
+      description: Список изменений для заявки
+      required: true
+      type: array
+      items:
         $ref: '#/definitions/Modification'
   responses:
     '201':
