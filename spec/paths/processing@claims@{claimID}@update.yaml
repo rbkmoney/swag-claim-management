@@ -15,7 +15,6 @@ put:
         type: array
         items:
           $ref: '#/definitions/Modification'
-
   responses:
     '201':
       description: Заявка обновлена
