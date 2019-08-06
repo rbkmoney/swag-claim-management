@@ -1,6 +1,9 @@
 type: object
 required:
   - creation
-properties:
-  creation:
-    $ref: '#/definitions/ContractAdjustmentParams'
+allOf:
+  - $ref: '#/definitions/ContractModification'
+  - type: object
+    properties:
+      creation:
+        $ref: '#/definitions/ContractAdjustmentParams'

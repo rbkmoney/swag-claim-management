@@ -3,10 +3,13 @@ type: object
 required:
   - signedAt
   - legalAgreementID
-properties:
-  signedAt:
-    type: string
-  legalAgreementID:
-    type: string
-  validUntil:
-    type: string
+allOf:
+  - $ref: '#/definitions/ContractModification'
+  - type: object
+    properties:
+      signedAt:
+        type: string
+      legalAgreementID:
+        type: string
+      validUntil:
+        type: string
