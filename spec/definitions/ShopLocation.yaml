@@ -1,9 +1,9 @@
 description: Местоположение магазина, по которому можно его найти
 type: object
-discriminator: locationType
+discriminator: url
 required:
-  - locationType
+  - url
 properties:
-  locationType:
-    description: Тип местоположения
+  url:
+    description: электронный адрес
     type: string

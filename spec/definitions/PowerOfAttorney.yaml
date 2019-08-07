@@ -1,0 +1,15 @@
+description: Юридическое соглашение
+type: object
+required:
+  - signedAt
+  - legalAgreementID
+allOf:
+  - $ref: '#/definitions/RepresentativeDocument'
+  - type: object
+    properties:
+      signedAt:
+        type: string
+      legalAgreementID:
+        type: string
+      validUntil:
+        type: string
