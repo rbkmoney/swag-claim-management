@@ -1,4 +1,4 @@
-description: Межденародный банковский счёт
+description: Междyнародный банковский счёт
 type: object
 required:
   - accountHolder

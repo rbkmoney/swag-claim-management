@@ -13,7 +13,7 @@ allOf:
         description: Имя
         type: string
       middleName:
-        description: Очество
+        description: Отчество
         type: string
       secondName:
         description: Фамилия
