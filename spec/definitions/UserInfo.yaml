@@ -1,10 +1,10 @@
 description: Данные пользователя
 type: object
 required:
-  - id
+  - userId
   - email
   - username
-  - bank
+  - userType
 properties:
   userId:
     type: string
