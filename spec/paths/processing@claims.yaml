@@ -8,7 +8,12 @@ get:
     - $ref: '#/parameters/deadline'
     - $ref: '#/parameters/limit'
     - $ref: '#/parameters/continuationToken'
-    - $ref: '#/parameters/claimID'
+    - name: claimID
+      in: query
+      description: Идентификатор заявки
+      required: true
+      type: integer
+      format: int64
     - name: claimStatuses
       in: query
       description: Статус заявки для поиска
