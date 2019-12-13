@@ -8,7 +8,7 @@ get:
     - $ref: '#/parameters/deadline'
     - $ref: '#/parameters/limit'
     - $ref: '#/parameters/continuationToken'
-    - name: claimStatuses
+    - name: claimID
       in: query
       description: ID заявки
       required: false
