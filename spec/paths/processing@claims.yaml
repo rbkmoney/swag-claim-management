@@ -11,7 +11,7 @@ get:
     - name: claimID
       in: query
       description: Идентификатор заявки
-      required: true
+      required: false
       type: integer
       format: int64
     - name: claimStatuses
