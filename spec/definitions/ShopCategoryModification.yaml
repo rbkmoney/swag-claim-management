@@ -4,10 +4,7 @@ allOf:
   - $ref: '#/definitions/ShopModification'
   - type: object
     required:
-      - categoryID
+      - category
     properties:
-      categoryID:
-        description: |
-          Идентификатор категории товаров и услуг, предлагаемых в этом магазине
-        type: integer
-        format: int32
+      category:
+        $ref: '#/definitions/CategoryRef'
