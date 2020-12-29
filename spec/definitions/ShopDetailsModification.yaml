@@ -1,15 +1,10 @@
+description: Изменение деталей магазина
 type: object
 allOf:
   - $ref: '#/definitions/ShopModification'
   - type: object
     required:
-      - name
+      - details
     properties:
-      name:
-        description: Название магазина
-        type: string
-        maxLength: 100
-      description:
-        description: Краткое описание
-        type: string
-        maxLength: 1000
+      details:
+        $ref: '#/definitions/ShopDetails'
