@@ -6,12 +6,12 @@ allOf:
       - documentId
     properties:
       documentId:
-        description: Идентификатор комментария
+        description: Идентификатор заявки в CRM
         type: string
         maxLength: 40
         minLength: 1
       roistatId:
-        description: Идентификатор комментария
+        description: Идентификатор заявки в системе roistat
         type: string
         maxLength: 40
         minLength: 1
