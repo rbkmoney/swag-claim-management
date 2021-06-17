@@ -117,8 +117,7 @@ parameters:
     in: query
     description: Идентификатор участника
     required: true
-    type: integer
-    format: int64
+    type: string
   claimID:
     name: claimID
     in: path
